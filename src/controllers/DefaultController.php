@@ -9,6 +9,11 @@ class DefaultController extends AppController
         $this->render('login');
     }
 
+    public function register()
+    {
+        $this->render('register');
+    }
+
     public function boardView()
     {
         $this->render('boardView');

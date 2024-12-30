@@ -3,7 +3,21 @@
       Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
       "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
       "Source Han Sans CN", sans-serif;
-  }
+    --main-container-width: 90%;
+    --main-container-max-width: 600px;
+    --main-container-padding: 2.625rem 2.5rem;
+    --input-padding: 0.625rem;
+    --input-border-radius: 0.25rem;
+    --input-border: 0.0625rem solid #ccc;
+    --input-focus-border-color: #007BFF;
+    --button-border-radius: 2rem;
+    --button-opacity: 0.25;
+    --button-background: #111;
+    --button-hover-background: #007BFF;
+    --button-hover-opacity: 0.7;
+    --social-button-border-radius: 2.5rem;
+    --social-button-border: 0.0625rem solid #333;
+}
 
 html, body {
     height: 100%;
@@ -12,7 +26,7 @@ html, body {
     font-family: var(--default-font-family), serif;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +41,9 @@ select,
 textarea,
 button {
     outline: 0;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
+    border: var(--input-border);
+    padding: var(--input-padding);
+    border-radius: var(--input-border-radius);
     width: 100%;
     box-sizing: border-box;
 }
@@ -38,92 +52,98 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    border-color: #007BFF;
-}  
-  
+    border-color: var(--input-focus-border-color);
+}
+
 .main-container,
 .main-container * {
     box-sizing: border-box;
 }
-  
+
 .main-container {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    padding: 42px 40px 42px 40px;
+    justify-content: space-between;
+    width: var(--main-container-width);
+    max-width: var(--main-container-max-width);
+    padding: var(--main-container-padding);
     background: #ffffff;
     overflow: hidden;
-    border-radius: 24px;
+    border-radius: 1.5rem;
+    margin-left: 5rem;
+    margin-right: 15rem;
 }
+
+.logo-section {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 1;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-right: 17rem;
+}
+
+.PH-logo {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+}
+
 .login-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 32px;
+    flex: 2;
+    gap: 2rem;
     position: relative;
-    width: 520px;
 }
+
 .login-section-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 8px;
+    gap: 0.5rem;
     position: relative;
-    width: 213px;
-    z-index: 1;
+    width: 100%;
 }
+
 .log-in {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    width: 118px;
-    height: 60px;
     color: #333333;
     font-family: Poppins, var(--default-font-family);
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 500;
-    line-height: 60px;
+    line-height: 3.75rem;
     text-align: center;
     white-space: nowrap;
-    z-index: 2;
 }
+
 .have-account-login {
     display: flex;
     align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
+    gap: 0.625rem;
     position: relative;
-    width: 213px;
-    padding: 2px 2px 2px 2px;
-    z-index: 3;
+    width: 100%;
+    padding: 0.125rem;
 }
+
 .already-have-account {
     flex-shrink: 0;
     position: relative;
-    width: 209px;
+    width: 100%;
     font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5rem;
     text-align: left;
-    text-overflow: initial;
     white-space: nowrap;
-    z-index: 4;
 }
 
 .already-have-account:hover {
@@ -134,9 +154,9 @@ button:focus {
     position: relative;
     color: rgba(102, 102, 102, 0.8);
     font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5rem;
     text-align: left;
 }
 
@@ -145,116 +165,110 @@ button:focus {
     position: relative;
     color: #111111;
     font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5rem;
     text-align: left;
 }
+
 .login-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 16px;
+    gap: 1rem;
     position: relative;
-    width: 480px;
-    z-index: 5;
+    width: 100%;
 }
+
 .email-input-frame, .password-input-frame {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 4px;
+    gap: 0.25rem;
     position: relative;
-    width: 480px;
-    z-index: 6;
+    width: 100%;
 }
+
 .mail-info, .password-info {
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
     min-width: 0;
-    height: 27px;
-    z-index: 7;
+    height: 1.6875rem;
 }
+
 .label, .password-hide-see {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
-    height: 24px;
+    height: 1.5rem;
     top: 0;
     left: 0;
     color: #666666;
     font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5rem;
     text-align: left;
     white-space: nowrap;
-    z-index: 8;
 }
+
 .mail-input, .password-input, .sign-in-button {
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
     min-width: 0;
-    height: 56px;
-    border: 1px solid rgba(102, 102, 102, 0.35);
-    z-index: 9;
+    height: 3.5rem;
+    border: 0.0625rem solid rgba(102, 102, 102, 0.35);
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 0.75rem;
 }
+
 .password-hide-see {
     position: absolute;
     left: 92%;
-    z-index: 14;
 }
 
 .password-hide-see:hover {
     text-decoration: line-through;
 }
 
-.sign-in-button{
+.sign-in-button {
     cursor: pointer;
-    border-radius: 32px;
-    opacity: 0.25;
-    background: #111;
+    border-radius: var(--button-border-radius);
+    opacity: var(--button-opacity);
+    background: var(--button-background);
 }
 
-.sign-up{
+.sign-up {
     color: #FFF;
     text-align: center;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.social-media-buttons{
+.social-media-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 16px;
+    gap: 1rem;
     position: relative;
-    width: 480px;
-    z-index: 19;
+    width: 100%;
 }
 
 .facebook-button, .google-button {
-    border-radius: 40px;
-    border: 1px solid #333;
+    border-radius: var(--social-button-border-radius);
+    border: var(--social-button-border);
     background: #FFF;
     display: flex;
-    width: 230px;
-    height: 56px;
-    padding: 12.5px 0px 11.5px 0px;
+    width: 100%;
+    max-width: 14.375rem;
+    height: 3.5rem;
+    padding: 0.78125rem 0;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -262,20 +276,35 @@ button:focus {
 
 .sign-in-button:hover {
     border-color: #ffffff;
-    background-color: #007BFF;
-    opacity: 70;
+    background-color: var(--button-hover-background);
+    opacity: var(--button-hover-opacity);
 }
 
-.facebook-button:hover, .google-button:hover{
-    border-color: #007BFF;
+.facebook-button:hover, .google-button:hover {
+    border-color: var(--input-focus-border-color);
 }
 
-.google-social-icon{
-    width: 24px;
-    height: 24px;
+.google-social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-.facebook-social-icon{
-    width: 32px;
-    height: 32px;
+.facebook-social-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-section, .login-section {
+        width: 100%;
+    }
+
+    .PH-logo {
+        max-width: 4rem;
+    }
 }

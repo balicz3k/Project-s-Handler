@@ -26,7 +26,7 @@
         <form class="login-form" action="/register" method="POST">
             <div class="email-input-frame">
                 <div class="mail-info"><span class="label">What should we call you?</span></div>
-                <input type="text" name="login" class="mail-input" required>
+                <input type="text" name="nickname" class="mail-input" required>
             </div>
             <div class="email-input-frame">
                 <div class="mail-info"><span class="label">What’s your email?</span></div>
@@ -39,8 +39,12 @@
                 </div>
                 <input type="password" name="password" class="password-input" required>
             </div>
-            <div class="mail-info"><span class="label">Use 8 or more characters with a mix of letters, numbers & symbols</span></div>
-            <div class="mail-info"><span class="label">By creating an account, you agree to the Terms of use and Privacy Policy.</span></div>
+            <div class="password-input-frame">
+                <div class="password-info">
+                    <span class="label">Confirm a password</span>
+                </div>
+                <input type="password" name="re-password" class="password-input" required>
+            </div>
             <div class="messages">
                 <?php
                 if(isset($messages)){
@@ -54,14 +58,6 @@
                 <span class="sign-up">Create an account</span>
             </button>
         </form>
-        <div class="social-media-buttons">
-            <button class="facebook-button">
-                <img class="facebook-social-icon" src="/public/assets/facebook-logo.png" alt="Facebook">
-            </button>
-            <button class="google-button">
-                <img class="google-social-icon" src="/public/assets/google-logo.png" alt="Google">
-            </button>
-        </div>
     </div>
 </div>
 </body>

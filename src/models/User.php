@@ -1,24 +1,19 @@
 <?php
 
-namespace models;
-
 class User
 {
     private $password;
-    private $name;
-    private $surname;
+    private $nickname;
     private $email;
 
     public function __construct(
         string $email,
         string $password,
-        string $name,
-        string $surname
+        string $nickname
     ) {
         $this->email = $email;
         $this->password = $password;
-        $this->name = $name;
-        $this->surname = $surname;
+        $this->nickname = $nickname;
     }
 
     public function getEmail(): string
@@ -29,5 +24,10 @@ class User
     public function getPassword()
     {
         return $this->password;
+    }
+
+    public function getNickname()
+    {
+        return $this->nickname;
     }
 }

@@ -9,5 +9,6 @@ Routing::get('', 'DefaultController');
 Routing::get('boardView', 'DefaultController');
 Routing::get('register', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('register', 'SecurityController');
 
 Routing::run($path);

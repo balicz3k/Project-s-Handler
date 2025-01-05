@@ -5,7 +5,7 @@
       "Source Han Sans CN", sans-serif;
     --main-container-width: 90%;
     --main-container-max-width: 600px;
-    --main-container-padding: 2.625rem 2.5rem;
+    --main-container-padding: 2rem 2.2rem;
     --input-padding: 0.625rem;
     --input-border-radius: 0.25rem;
     --input-border: 0.0625rem solid #ccc;
@@ -72,7 +72,7 @@ button:focus {
     overflow: hidden;
     border-radius: 1.5rem;
     margin-left: 5rem;
-    margin-right: 15rem;
+    margin-right: 8.5rem;
 }
 
 .logo-section {
@@ -83,7 +83,7 @@ button:focus {
     flex: 1;
     margin-top: 3rem;
     margin-left: 3rem;
-    margin-right: 17rem;
+    margin-right: 20rem;
 }
 
 .PH-logo {
@@ -189,15 +189,15 @@ button:focus {
     width: 100%;
 }
 
-.mail-info, .password-info {
+.mail-info, .password-info, .license-info, .password-requirements{
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
     min-width: 0;
-    height: 1.6875rem;
+    height: 1.65rem;
 }
 
-.label, .password-hide-see {
+.label, .password-hide-see, .small-label{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -212,6 +212,13 @@ button:focus {
     line-height: 1.5rem;
     text-align: left;
     white-space: nowrap;
+}
+
+.small-label{
+    font-size: 0.8rem;
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure compatibility */
 }
 
 .mail-input, .password-input, .sign-in-button {

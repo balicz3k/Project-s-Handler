@@ -21,7 +21,14 @@ class ProjectController extends AppController {
 
     public function projects()
     {
-        $projects = $this->projectRepository->getProjects();
+        session_start();
+
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header('Location: /login');
+            exit;
+        }
+        $userId = $_SESSION['user_id'];
+        $projects = $this->projectRepository->getProjectsByUserId($userId);
         $this->render('projects', ['projects' => $projects]);
     }
 

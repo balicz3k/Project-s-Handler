@@ -5,12 +5,15 @@ class User
     private $password;
     private $nickname;
     private $email;
+    private $id;
 
     public function __construct(
+        $id,
         string $email,
         string $password,
         string $nickname
     ) {
+        $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->nickname = $nickname;
@@ -29,5 +32,10 @@ class User
     public function getNickname()
     {
         return $this->nickname;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

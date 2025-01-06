@@ -14,8 +14,9 @@ class DefaultController extends AppController
         $this->render('register');
     }
 
-    public function boardView()
+    public function projects()
     {
-        $this->render('boardView');
+        $this->render('projects');
     }
+
 }

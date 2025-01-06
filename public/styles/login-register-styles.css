@@ -315,3 +315,16 @@ button:focus {
         max-width: 4rem;
     }
 }
+
+.input-error {
+    border: 2px solid red;
+}
+
+.input-success {
+    border: 2px solid green;
+}
+
+.button-enabled {
+    background-color: var(--button-hover-background);
+    color: white;
+}

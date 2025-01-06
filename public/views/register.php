@@ -44,6 +44,7 @@
             <div class="password-input-frame">
                 <div class="password-info">
                     <span class="label">Confirm a password</span>
+                    <span class="password-hide-see">Hide</span>
                 </div>
                 <input type="password" name="re-password" class="password-input" required>
             </div>

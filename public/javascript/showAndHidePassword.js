@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('.login-form');
-    form.addEventListener('input', validateForm);
-
     const passwordFields = document.querySelectorAll('input[type="password"]');
     const toggleButtons = document.querySelectorAll('.password-hide-see');
 

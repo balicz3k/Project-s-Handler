@@ -1,5 +1,53 @@
-body {
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+    --input-padding: 0.625rem;
+    --input-border-radius: 0.25rem;
+    --input-border: 0.0625rem solid #ccc;
+    --input-focus-border-color: #007BFF;
+    --button-border-radius: 2rem;
+    --button-opacity: 0.25;
+    --button-background: #111;
+    --button-hover-background: #007BFF;
+    --button-hover-opacity: 0.7;
+    --social-button-border-radius: 2.5rem;
+    --social-button-border: 0.0625rem solid #333;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
+    padding: 0;
+    font-family: var(--default-font-family), serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+input, select, textarea, button {
+    outline: 0;
+    border: var(--input-border);
+    padding: var(--input-padding);
+    border-radius: var(--input-border-radius);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    border-color: var(--input-focus-border-color);
+}
+
+button {
+    cursor: pointer;
+    border-radius: var(--button-border-radius);
+    opacity: var(--button-opacity);
+    background: var(--button-background);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-background);
+    opacity: var(--button-hover-opacity);
 }
 
 .container {
@@ -86,16 +134,13 @@ nav {
     width: 20vw;
     height: 100%;
     background: transparent linear-gradient(180deg, #007BFF 0%, #007BFF 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 main {
     width: 80vw;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 nav>img {
@@ -114,26 +159,28 @@ li i {
 }
 
 .button {
+    line-height: 2em;
     border: 1px solid #FFFFFF;
-    border-radius: 1em;
     margin-left: 1em;
     text-align: center;
     letter-spacing: 0.72px;
     color: #FFFFFF;
     padding: 0.2rem;
     width: 60%;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 0.75rem;
 }
 
 ul {
     list-style-type: none;
-    font: normal normal normal 20px/27px Segoe UI;
     letter-spacing: 0.72px;
     color: #FFFFFF;
     height: 100%;
     width: calc(100% - 40px);
     position: relative;
-    margin: 0 auto;
     padding: 0;
+    margin-left: 16%;
 }
 
 li {
@@ -156,40 +203,11 @@ main {
 
 header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 1em 2em;
     border-bottom: 1px solid gray;
-}
-
-.add-project {
-    background: transparent linear-gradient(180deg, #007BFF 0%, #007BFF 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 1.5em;
-    color: white;
-    letter-spacing: 0.1em;
-    text-align: center;
-    width: 20%;
-}
-
-.add-project>i {
-    padding: 1em 1em;
-}
-
-.search-bar {
-    width: 70%;
-}
-
-.search-bar>form>input {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #707070;
-    border-radius: 23px;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 0.72px;
-    color: #A8A8A8;
-    margin: 0;
-    box-sizing: border-box;
+    align-items: center;
 }
 
 section {
@@ -198,40 +216,4 @@ section {
     grid-gap: 2em;
     padding: 2em;
     overflow: auto;
-}
-
-.projects>div>img {
-    height: 50%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 1em 1em 0 0;
-}
-
-.projects>div>div {
-    height: 50%;
-    margin: 1em;
-    color: #2699FB;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.projects>div {
-    border: 1px solid gray;
-    border-radius: 1em 1em 0 0;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-section.project-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.project-form>form {
-    display: flex;
-    flex-direction: column;
 }

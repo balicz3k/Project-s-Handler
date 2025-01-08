@@ -1,0 +1,84 @@
+
+.admin-panel {
+    width: 100%;
+    max-width: 60vw;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
+    align-items: center;
+}
+
+.admin-panel table {
+    width: 60%;
+    max-width: 60vw;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-right: 10%;
+}
+
+.admin-panel table th, .admin-panel table td {
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    margin: 5%;
+    max-width: 60vw;
+}
+
+.admin-panel .update-button {
+    margin-left: 0;
+    height: 35%;
+}
+
+.admin-panel table th {
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 60vw;
+}
+
+.admin-panel table tr:hover {
+    margin-right: 10rem;
+    background-color: #f1f1f1;
+}
+
+.admin-panel form {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.admin-panel select, .admin-panel {
+    padding: 5px 10px;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.admin-panel button:hover {
+    background-color: #f4f4f4;
+}
+
+.update-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 0;
+    width: 100%;
+}
+
+.admin-panel .delete-button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+

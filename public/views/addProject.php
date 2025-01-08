@@ -10,7 +10,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/styles/other-view-styles.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/general-styles.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/projects-styles.css">
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>PROJECTS</title>
 </head>
@@ -20,22 +21,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <nav>
         <img src="/public/assets/ProjectsHandler-logo.png">
         <ul>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="/projects" class="button">Projects</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">User</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="#" class="button">Admin</a>
-            </li>
-            <li>
-                <i class="fas fa-project-diagram"></i>
-                <a href="/logout" class="button">Logout</a>
-            </li>
+            <li><a href="/projects" class="button">Projects</a></li>
+            <li><a href="/user" class="button">User</a></li>
+            <?php if ($_SESSION['user_role'] === 'admin'):?>
+                <li><a href="/admin" class="button">Admin</a></li>
+            <?php endif; ?>
+            <li><a href="/logout" class="button">Logout</a></li>
         </ul>
     </nav>
     <main>
@@ -45,9 +36,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <input placeholder="search project">
                 </form>
             </div>
-            <div class="add-project" onclick="window.location.href='/addProject'">
-                <i class="fas fa-plus"></i> add project
-            </div>
+            <button class="add-project" onclick="window.location.href='/addProject'">
+                Add project
+            </button>
         </header>
         <section class="project-form">
             <h1>UPLOAD</h1>

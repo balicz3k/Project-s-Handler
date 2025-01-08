@@ -23,7 +23,8 @@ class UserRepository extends Repository
             $user['user_id'],
             $user['email'],
             $user['password'],
-            $user['nickname']
+            $user['nickname'],
+            $user['role']
         );
     }
 
@@ -102,4 +103,37 @@ class UserRepository extends Repository
 
         $statement->execute();
     }
+
+    public function getAllUsersWithProjectCount(): array
+    {
+        $statement = $this->database->connect()->prepare('
+            SELECT u.user_id, u.nickname, u.email, u.role, COUNT(p.id) as project_count
+            FROM public.users u
+            LEFT JOIN public.projects p ON u.user_id = p.id_assigned_by
+            GROUP BY u.user_id
+        ');
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateUserRole($userId, $role): void
+    {
+        $statement = $this->database->connect()->prepare('
+            UPDATE public.users SET role = :role WHERE user_id = :user_id
+        ');
+        $statement->bindParam(':role', $role, PDO::PARAM_STR);
+        $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function deleteUser($userId): void
+    {
+        $statement = $this->database->connect()->prepare('
+            DELETE FROM public.users WHERE user_id = :user_id
+        ');
+        $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $statement->execute();
+    }
+
 }

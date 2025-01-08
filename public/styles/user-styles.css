@@ -1,0 +1,57 @@
+.user-profile {
+    width: 100%;
+    max-width: 60vw;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
+
+}
+
+.user-info {
+    margin-bottom: 2em;
+}
+
+.user-profile-form {
+    width: 100%;
+}
+
+.user-profile-form .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.user-profile-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+}
+
+.user-profile-form input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    width: 100%;
+    align-self: stretch;
+    height: 3rem;
+}
+
+
+.user-profile-form button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 1rem;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.user-profile-form button:hover {
+    background-color: #0056b3;
+}

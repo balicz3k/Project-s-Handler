@@ -1,0 +1,71 @@
+.add-project {
+    line-height: 1.25rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--default-font-family), serif;
+    background: transparent linear-gradient(180deg, #007BFF 0%, #007BFF 100%) 0% 0% no-repeat padding-box;
+    color: white;
+    border: white;
+    width: 20%;
+    height: 55%;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+.search-bar {
+    align-content: center;
+    width: 75%;
+    height: 60%;
+}
+
+.search-bar>form>input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #A8A8A8;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.projects>div>img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
+}
+
+.projects>div>div {
+    height: 50%;
+    margin: 1em;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects>div {
+    border: 1px solid gray;
+    border-radius: 1em 1em 0 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.project-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-form>form {
+    display: flex;
+    flex-direction: column;
+}

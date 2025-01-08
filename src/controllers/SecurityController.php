@@ -34,6 +34,7 @@ class SecurityController extends AppController {
         $_SESSION['loggedin'] = true;
         $_SESSION['user_id'] = $user->getId();
         $_SESSION['user_email'] = $user->getEmail();
+        $_SESSION['user_role'] = $user->getRole();
         $_SESSION['user_nickname'] = $user->getNickname();
 
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -69,7 +70,7 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character!']]);
         }
 
-        $user = new User(null ,$email, password_hash($password, PASSWORD_DEFAULT), $nickname);
+        $user = new User(null ,$email, password_hash($password, PASSWORD_DEFAULT), $nickname, 'user');
         $userRepository->createUser($user);
 
         session_start();

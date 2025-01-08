@@ -12,7 +12,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="/public/styles/other-view-styles.css">
+    <link rel="stylesheet" href="/public/styles/general-styles.css">
+    <link rel="stylesheet" href="/public/styles/user-styles.css">
 </head>
 <body>
 <div class="base-container">
@@ -21,6 +22,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <ul>
             <li><a href="/projects" class="button">Projects</a></li>
             <li><a href="/user" class="button">User</a></li>
+            <?php if ($_SESSION['user_role'] === 'admin'):?>
+                <li><a href="/admin" class="button">Admin</a></li>
+            <?php endif; ?>
             <li><a href="/logout" class="button">Logout</a></li>
         </ul>
     </nav>

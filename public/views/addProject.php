@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </button>
         </header>
         <section class="project-form">
-            <h1>UPLOAD</h1>
+            <h1>Add new project</h1>
             <form action="/addProject" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">
                     <?php

@@ -33,21 +33,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
             <table>
                 <thead>
                 <tr>
-                    <th>Nickname</th>
-                    <th>Email</th>
-                    <th>Projects</th>
-                    <th>Role</th>
-                    <th>Actions</th>
+                    <th class="nickname">Nickname</th>
+                    <th class="email">Email</th>
+                    <th class="project-count">Projects</th>
+                    <th class="role">Role</th>
+                    <th class="update">Update role</th>
+                    <th class="delete">Remove user</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?= $user['nickname']; ?></td>
-                        <td><?= $user['email']; ?></td>
-                        <td><?= $user['project_count']; ?></td>
-                        <td><?= $user['role']; ?></td>
-                        <td>
+                        <td class="nickname"><?= $user['nickname']; ?></td>
+                        <td class="email"><?= $user['email']; ?></td>
+                        <td class="project-count"><?= $user['project_count']; ?></td>
+                        <td class="role"><?= $user['role']; ?></td>
+                        <td class="update">
                             <form action="/updateRole" method="POST" style="display:inline;">
                                 <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                 <select name="role" class="role-selector">
@@ -57,7 +58,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
                                 <button type="submit" class="update-button">Update</button>
                             </form>
                         </td>
-                        <td>
+                        <td class="delete">
                             <form action="/deleteUser" method="POST" style="display:inline;">
                                 <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                 <button type="submit" class="delete-button">Delete</button>

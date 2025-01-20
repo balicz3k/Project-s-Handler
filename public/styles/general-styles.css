@@ -169,7 +169,7 @@ li i {
     width: 60%;
     align-self: stretch;
     overflow: hidden;
-    border-radius: 0.75rem;
+    border-radius: 2rem;
 }
 
 ul {
@@ -216,4 +216,16 @@ section {
     grid-gap: 2em;
     padding: 2em;
     overflow: auto;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    font-family: var(--default-font-family), serif;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333;
+    font-family: var(--default-font-family), serif;
 }

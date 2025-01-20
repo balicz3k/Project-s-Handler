@@ -29,7 +29,6 @@ class ProjectController extends AppController {
         }
         $userId = $_SESSION['user_id'];
         $projects = $this->projectRepository->getProjectsByUserId($userId);
-        echo "user id: $userId";
         $this->render('projects', ['projects' => $projects]);
     }
 

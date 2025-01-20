@@ -1,45 +1,60 @@
 
 .admin-panel {
-    width: 100%;
-    max-width: 60vw;
+    width: 60vw;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 8rem;
     margin-left: 10%;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .admin-panel table {
-    width: 60%;
-    max-width: 60vw;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    margin-right: 10%;
+    width: 60vw;
+    table-layout: fixed;
 }
 
 .admin-panel table th, .admin-panel table td {
     padding: 15px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #ddd;
-    vertical-align: middle;
-    margin: 5%;
-    max-width: 60vw;
+    border-bottom: 2px solid #ddd;
+    font-family: Poppins, var(--default-font-family), Serif, serif;
 }
 
-.admin-panel .update-button {
-    margin-left: 0;
-    height: 35%;
+.nickname {
+    width: 15%;
+}
+
+.email {
+    width: 25%;
+}
+
+.role {
+    width: 10%;
+}
+
+.project-count {
+    width: 8%;
+}
+
+.update {
+    width: 15%;
+}
+
+.delete {
+    width: 15%;
 }
 
 .admin-panel table th {
     background-color: #f4f4f4;
     color: #333;
-    max-width: 60vw;
+    text-align: center;
 }
+
+.admin-panel table tr {
+    text-align: center;
+    transition: margin-right 0.3s;
 
 .admin-panel table tr:hover {
     margin-right: 10rem;
@@ -57,15 +72,19 @@
     cursor: pointer;
 }
 
-.admin-panel button:hover {
-    background-color: #f4f4f4;
-}
+.update-button, .delete-button {
+    padding: 0.8em;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 0.7rem;
+}    
 
 .update-button {
     background-color: #007BFF;
     color: white;
-    border: none;
-    border-radius: 1rem;
+    border-radius: 2rem;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-left: 0;
@@ -73,12 +92,11 @@
 }
 
 .delete-button {
+    background-image: none;
     background-color: #FF0000;
+    transition: background-color 0.3s;
     color: white;
-    border: none;
-    border-radius: 1rem;
+    border-radius: 2rem;
     cursor: pointer;
     width: 100%;
 }
-
-

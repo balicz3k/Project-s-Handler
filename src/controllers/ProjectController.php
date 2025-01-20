@@ -29,6 +29,7 @@ class ProjectController extends AppController {
         }
         $userId = $_SESSION['user_id'];
         $projects = $this->projectRepository->getProjectsByUserId($userId);
+        echo "user id: $userId";
         $this->render('projects', ['projects' => $projects]);
     }
 
@@ -49,10 +50,10 @@ class ProjectController extends AppController {
             $project = new Project($_POST['title'], $_POST['description'], $_FILES['file']['name']);
             $this->projectRepository->addProject($project);
 
-            return $this->render('projects', [
-                'messages' => $this->message,
-                'projects' => $this->projectRepository->getProjects()
-            ]);
+            $userId = $_SESSION['user_id'];
+
+            header('Location: /projects');
+            exit;
         }
 
         return $this->render('addProject', ['messages' => $this->message]);

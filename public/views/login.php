@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenger:wght@400&display=swap" />
     <link rel="stylesheet" href="/public/styles/login-register-styles.css" />
     <script src="/public/javascript/showAndHidePassword.js" defer></script>
+    <script src="/public/javascript/loginFormChecker.js" defer></script>
 </head>
 <body>
     <div class="logo-section">
@@ -27,7 +28,7 @@
             <form class="login-form" action="/login" method="POST">
                 <div class="email-input-frame">
                     <div class="mail-info"><span class="label">Email address</span></div>
-                    <input type="text" name="email" class="mail-input" required>
+                    <input type="text" name="email" class="mail-input" placeholder="john@deep@.com" required>
                 </div>
                 <div class="password-input-frame">
                     <div class="password-info">

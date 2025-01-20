@@ -72,7 +72,7 @@
     width: 100%;
 }
 
-.admin-panel .delete-button {
+.delete-button {
     background-color: #FF0000;
     color: white;
     border: none;

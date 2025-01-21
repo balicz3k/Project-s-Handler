@@ -70,5 +70,12 @@ class TaskRepository {
         $stmt->bindParam(':id', $taskId, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public function deleteTask($taskId)
+    {
+        $stmt = $this->database->connect()->prepare('DELETE FROM tasks WHERE id = :id');
+        $stmt->bindParam(':id', $taskId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }
 

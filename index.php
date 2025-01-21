@@ -20,5 +20,8 @@ Routing::post('logout', 'SecurityController');
 Routing::get('scrumBoard', 'ScrumBoardController');
 Routing::post('addTask', 'ScrumBoardController');
 Routing::post('updateTaskStatus', 'ScrumBoardController');
+Routing::post('updateTaskTitle', 'ScrumBoardController');
+Routing::post('updateTaskColor', 'ScrumBoardController');
+Routing::post('deleteTask', 'ScrumBoardController');
 
 Routing::run($path);

@@ -12,7 +12,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <title>Scrum Board</title>
     <link rel="stylesheet" href="/public/styles/general-styles.css">
     <link rel="stylesheet" href="/public/styles/scrum-board-styles.css">
-    <script src="/public/javascript/dragAndDrop.js" defer></script>
+    <script src="/public/javascript/drag-and-drop.js" defer></script>
+    <script src="/public/javascript/context-menu.js" defer></script>
     <script src="/public/javascript/color-input-change.js" defer></script>
 </head>
 <body>
@@ -53,7 +54,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="column" id="in_progress">
                 <h2>In Progress</h2>
                 <?php foreach ($tasks['in_progress'] as $task): ?>
-                    <div class="task" id="task-<?= $task['id']; ?>" draggable="true" style="background-color: <?= $task['color']; ?>;">
+                    <div class="task" id="task-<?= $task['id']; ?>" draggable="true" style="background-color: <?= $task['color']; ?>;" >
                         <?= $task['title']; ?>
                     </div>
                 <?php endforeach; ?>

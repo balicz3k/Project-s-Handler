@@ -1,0 +1,173 @@
+.add-project {
+    line-height: 1.25rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--default-font-family), serif;
+    background: transparent linear-gradient(180deg, #007BFF 0%, #007BFF 100%) 0% 0% no-repeat padding-box;
+    color: white;
+    border: white;
+    width: 20%;
+    height: 55%;
+    border-radius: 2rem;
+    opacity: 1;
+    padding: 1rem;
+}
+
+.search-bar {
+    align-content: center;
+    width: 75%;
+    height: 60%;
+    border-radius: 2rem;
+}
+
+.search-bar>form>input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 2rem;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #A8A8A8;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.search-bar > form > input[type="text"] {
+    width: 50%;
+}
+
+.search-bar > form > input[type="color"] {
+    width: 10%;
+    height: 60%;
+    padding: 1.15rem;
+    border-radius: 2rem;
+    border: 1px solid #707070;
+    box-shadow: 0px 3px 6px #00000029;
+    background: none;
+}
+
+.projects>div>img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
+}
+
+.projects>div>div {
+    height: 50%;
+    margin: 1em;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects>div {
+    border: 1px solid gray;
+    border-radius: 1em 1em 0 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.project-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-form>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.scrum-board {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.column {
+    flex: 1;
+    margin: 0 1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 1rem;
+}
+
+.column h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+.task {
+    position: relative;
+    background-color: #007BFF;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 3px 6px #00000029;
+    cursor: grab;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    border: 1px solid #0056b3;
+    font-family: var(--default-font-family), serif;
+    text-align: center;
+}
+
+.delete-task {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task.dragging {
+    opacity: 0.5; /* Make the dragged task semi-transparent */
+}
+
+.column {
+    flex: 1;
+    margin: 0 1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 1rem;
+    position: relative;
+}
+
+.column .placeholder {
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    height: 3rem;
+}

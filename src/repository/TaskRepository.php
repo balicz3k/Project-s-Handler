@@ -54,4 +54,21 @@ class TaskRepository {
         $stmt->bindParam(':task_id', $taskId, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public function updateTaskTitle($taskId, $title)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE tasks SET title = :title WHERE id = :id');
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $taskId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function updateTaskColor($taskId, $color)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE tasks SET color = :color WHERE id = :id');
+        $stmt->bindParam(':color', $color, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $taskId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }
+

@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <link rel="stylesheet" type="text/css" href="/public/styles/general-styles.css">
     <link rel="stylesheet" type="text/css" href="/public/styles/projects-styles.css">
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>PROJECTS</title>
+    <title>Projects</title>
 </head>
 
 <body>

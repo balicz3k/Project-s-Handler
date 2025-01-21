@@ -66,10 +66,63 @@ class ScrumBoardController extends AppController
         }
 
         if ($this->isPost()) {
-            $taskId = $_POST['task_id'];
-            $status = $_POST['status'];
+            $data = json_decode(file_get_contents('php://input'), true);
+            $taskId = $data['task_id'];
+            $status = $data['status'];
 
             $this->taskRepository->updateTaskStatus($taskId, $status);
+
+            echo json_encode(['success' => true]);
+            return;
         }
+
+        echo json_encode(['success' => false]);
     }
+
+    public function updateTaskTitle()
+    {
+        session_start();
+
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header('Location: /login');
+            exit;
+        }
+
+        if ($this->isPost()) {
+            $data = json_decode(file_get_contents('php://input'), true);
+            $taskId = $data['task_id'];
+            $title = $data['title'];
+
+            $this->taskRepository->updateTaskTitle($taskId, $title);
+
+            echo json_encode(['success' => true]);
+            return;
+        }
+
+        echo json_encode(['success' => false]);
+    }
+
+    public function updateTaskColor()
+    {
+        session_start();
+
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header('Location: /login');
+            exit;
+        }
+
+        if ($this->isPost()) {
+            $data = json_decode(file_get_contents('php://input'), true);
+            $taskId = $data['task_id'];
+            $color = $data['color'];
+
+            $this->taskRepository->updateTaskColor($taskId, $color);
+
+            echo json_encode(['success' => true]);
+            return;
+        }
+
+        echo json_encode(['success' => false]);
+    }
+
 }

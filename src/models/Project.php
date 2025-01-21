@@ -1,12 +1,15 @@
 <?php
 
 class Project {
+
+    private $id;
     private $title;
     private $description;
     private $image;
 
-    public function __construct($title, $description, $image)
+    public function __construct($id, $title, $description, $image)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
@@ -40,5 +43,10 @@ class Project {
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

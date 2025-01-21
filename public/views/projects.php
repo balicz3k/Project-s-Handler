@@ -42,8 +42,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <section class="projects">
             <?php if (isset($projects) && is_array($projects)): ?>
                 <?php foreach($projects as $project): ?>
-                    <div id="project-<?= $project->getTitle(); ?>">
-                        <img src="public/uploads/<?= $project->getImage(); ?>">
+                    <div id="project-<?= htmlspecialchars($project->getTitle()); ?>" onclick="window.location.href='/scrumBoard?project_id=<?= htmlspecialchars($project->getId()); ?>'">
+                    <img src="public/uploads/<?= $project->getImage(); ?>">
                         <div>
                             <h2><?= $project->getTitle(); ?></h2>
                             <p><?= $project->getDescription(); ?></p>

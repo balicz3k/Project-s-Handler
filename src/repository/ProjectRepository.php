@@ -40,6 +40,7 @@ class ProjectRepository extends Repository
     $result = [];
     foreach ($projects as $project) {
         $result[] = new Project(
+            $project['id'],
             $project['title'],
             $project['description'],
             $project['image']

@@ -55,6 +55,7 @@
 .admin-panel table tr {
     text-align: center;
     transition: margin-right 0.3s;
+}
 
 .admin-panel table tr:hover {
     margin-right: 10rem;
@@ -79,7 +80,7 @@
     transition: background-color 0.3s;
     width: 100%;
     font-size: 0.7rem;
-}    
+}
 
 .update-button {
     background-color: #007BFF;

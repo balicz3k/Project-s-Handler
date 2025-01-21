@@ -5,6 +5,7 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/ProjectController.php';
 require_once 'src/controllers/UserController.php';
 require_once 'src/controllers/AdminController.php';
+require_once 'src/controllers/ScrumBoardController.php';
 
 class Routing {
 

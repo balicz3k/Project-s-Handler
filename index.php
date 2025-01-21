@@ -17,5 +17,8 @@ Routing::post('addProject', 'ProjectController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('logout', 'SecurityController');
+Routing::get('scrumBoard', 'ScrumBoardController');
+Routing::post('addTask', 'ScrumBoardController');
+Routing::post('updateTaskStatus', 'ScrumBoardController');
 
 Routing::run($path);

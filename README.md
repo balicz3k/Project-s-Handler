@@ -39,14 +39,26 @@ This project is a web-based application for managing projects and tasks. It allo
 
 ## Screenshots
 
-### Login Page
+### Login View
 ![Login Page](public/screenshots/login.png)
 
-### Projects Page
+### Register View
+![Login Page](public/screenshots/register.png)
+
+### Projects View
 ![Projects Page](public/screenshots/projects.png)
 
-### Scrum Board
-![Scrum Board](public/screenshots/scrum-board.png)
+### Add Projects View
+![Projects Page](public/screenshots/add-project.png)
+
+### ScrumBoard View
+![Projects Page](public/screenshots/scrum-board.png)
+
+### User View
+![Scrum Board](public/screenshots/user.png)
+
+### Admin View
+![Scrum Board](public/screenshots/admin.png)
 
 ## Project Structure
 

@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenger:wght@400&display=swap" />
     <link rel="stylesheet" href="/public/styles/login-register-styles.css" />
-    <script src="/public/javascript/showAndHidePassword.js" defer></script>
-    <script src="/public/javascript/loginFormChecker.js" defer></script>
+    <script src="/public/javascript/show-and-hide-password.js" defer></script>
+    <script src="/public/javascript/login-form-checker.js" defer></script>
 </head>
 <body>
     <div class="logo-section">

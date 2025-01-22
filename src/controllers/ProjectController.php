@@ -46,10 +46,8 @@ class ProjectController extends AppController {
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $project = new Project($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $project = new Project(0,$_POST['title'], $_POST['description'], $_FILES['file']['name']);
             $this->projectRepository->addProject($project);
-
-            $userId = $_SESSION['user_id'];
 
             header('Location: /projects');
             exit;
@@ -70,5 +68,50 @@ class ProjectController extends AppController {
             return false;
         }
         return true;
+    }
+
+    public function updateProjectTitle()
+    {
+        session_start();
+
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header('Location: /login');
+            exit;
+        }
+
+        if ($this->isPost()) {
+            $data = json_decode(file_get_contents('php://input'), true);
+            $projectId = $data['project_id'];
+            $title = $data['title'];
+
+            $this->projectRepository->updateProjectTitle($projectId, $title);
+
+            echo json_encode(['success' => true]);
+            return;
+        }
+
+        echo json_encode(['success' => false]);
+    }
+
+    public function deleteProject()
+    {
+        session_start();
+
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header('Location: /login');
+            exit;
+        }
+
+        if ($this->isPost()) {
+            $data = json_decode(file_get_contents('php://input'), true);
+            $projectId = $data['project_id'];
+
+            $this->projectRepository->deleteProject($projectId);
+
+            echo json_encode(['success' => true]);
+            return;
+        }
+
+        echo json_encode(['success' => false]);
     }
 }

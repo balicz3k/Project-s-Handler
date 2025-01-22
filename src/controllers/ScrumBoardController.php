@@ -50,7 +50,7 @@ class ScrumBoardController extends AppController
 
             $this->taskRepository->addTask($projectId, $title, $color);
 
-            header("Location: /scrumBoard");
+            header("Location: /scrumBoard?project_id=" . urlencode($projectId));
             exit;
         }
 

@@ -90,6 +90,7 @@ class ProjectRepository extends Repository
 
         foreach ($projects as $project) {
             $result[] = new Project(
+                $project['id'],
                 $project['title'],
                 $project['description'],
                 $project['image']
@@ -98,4 +99,20 @@ class ProjectRepository extends Repository
 
         return $result;
     }
+
+    public function updateProjectTitle($projectId, $title)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE projects SET title = :title WHERE id = :id');
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $projectId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function deleteProject($projectId)
+    {
+        $stmt = $this->database->connect()->prepare('DELETE FROM projects WHERE id = :id');
+        $stmt->bindParam(':id', $projectId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
 }

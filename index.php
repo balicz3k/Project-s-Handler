@@ -23,5 +23,7 @@ Routing::post('updateTaskStatus', 'ScrumBoardController');
 Routing::post('updateTaskTitle', 'ScrumBoardController');
 Routing::post('updateTaskColor', 'ScrumBoardController');
 Routing::post('deleteTask', 'ScrumBoardController');
+Routing::post('updateProjectTitle', 'ProjectController');
+Routing::post('deleteProject', 'ProjectController');
 
 Routing::run($path);

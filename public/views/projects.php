@@ -12,6 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <link rel="stylesheet" type="text/css" href="/public/styles/general-styles.css">
     <link rel="stylesheet" type="text/css" href="/public/styles/projects-styles.css">
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
+    <script src="/public/javascript/projects-context-menu.js" defer"></script>
     <title>Projects</title>
 </head>
 
@@ -42,7 +43,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <section class="projects">
             <?php if (isset($projects) && is_array($projects)): ?>
                 <?php foreach($projects as $project): ?>
-                    <div id="project-<?= htmlspecialchars($project->getTitle()); ?>" onclick="window.location.href='/scrumBoard?project_id=<?= htmlspecialchars($project->getId()); ?>'">
+                    <div class="project" id="project-<?= htmlspecialchars($project->getId()); ?>" onclick="window.location.href='/scrumBoard?project_id=<?= htmlspecialchars($project->getId()); ?>'">
                     <img src="public/uploads/<?= $project->getImage(); ?>">
                         <div>
                             <h2><?= $project->getTitle(); ?></h2>
@@ -55,5 +56,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <?php endif; ?>
         </section>
     </main>
+</div>
+
+<!-- Context Menu -->
+<div class="context-menu" id="contextMenu">
+    <button id="editProjectTitle">Edit Title</button>
+    <button id="deleteProject">Delete Project</button>
 </div>
 </body>

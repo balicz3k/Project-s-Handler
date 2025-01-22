@@ -77,19 +77,16 @@ This project is a web-based application for managing projects and tasks. It allo
 
 - **Create Project**: Users can create new projects with a title, description, and image.
 - **View Projects**: Users can view a list of their projects.
-- **Edit Project**: Users can edit the title and description of their projects.
+- **Edit Project**: Users can edit the title of their projects.
 - **Delete Project**: Users can delete projects.
-
-### Task Management
-
-- **Add Task**: Users can add tasks to a project with a title and color.
-- **Update Task**: Users can update the title and color of tasks.
-- **Delete Task**: Users can delete tasks.
 
 ### Scrum Board
 
+- **Add Task**: Users can add tasks to a project with a title and color.
 - **Organize Tasks**: Tasks are organized into columns (Not Started, In Progress, Done).
-- **Drag-and-Drop**: Users can drag and drop tasks between columns to update their status.
+- **Update Task**: Users can update the title and color of tasks.
+- **Update Task Status**: Users can update the status of tasks by dragging and dropping them to appropriate columns (Not Started, In Progress, Done).
+- **Delete Task**: Users can delete tasks.
 
 ## License
 

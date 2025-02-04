@@ -66,6 +66,9 @@ This project is a web-based application for managing projects and tasks. It allo
 - `src/`: PHP source code (controllers, models, repositories).
 - `views/`: HTML templates for rendering views.
 
+## Database structure
+![Database structure](diagram_ERD.png)
+
 ## Functionality
 
 ### User Authentication
